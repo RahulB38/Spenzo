@@ -465,3 +465,6 @@ def logout():
 
 if __name__ == "__main__":
     app.run(debug=True)
+else:
+    # Required for Vercel
+    application = app
