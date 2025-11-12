@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4 text-primary">Talky 🤖 - Ask Your Expenses</h2>
+
+  <div class="card p-3 shadow-sm">
+    <div id="chat-box" style="height: 300px; overflow-y: auto; border:1px solid #ccc; padding:10px; border-radius:10px; margin-bottom:10px;">
+    </div>
+    <form id="chat-form">
+      <div class="input-group">
+        <input type="text" id="user-input" class="form-control" placeholder="Ask something like: How much did I spend on health last month?" required>
+        <button class="btn btn-primary" type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const chatForm = document.getElementById('chat-form');
+  const chatBox = document.getElementById('chat-box');
+
+  chatForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const userInput = document.getElementById('user-input').value;
+    if(!userInput) return;
+
+    
+    const userDiv = document.createElement('div');
+    userDiv.innerHTML = `<b>You:</b> ${userInput}`;
+    chatBox.appendChild(userDiv);
+
+    
+    document.getElementById('user-input').value = '';
+
+   
+    const res = await fetch('/talky_query', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({message: userInput})
+    });
+
+    const data = await res.json();
+
+    const aiDiv = document.createElement('div');
+    aiDiv.innerHTML = `<b>AI:</b> ${data.response}`;
+    chatBox.appendChild(aiDiv);
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,123 @@
+/* General Layout */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+}
+
+/* Container */
+.register-container {
+  display: flex;
+  width: 80%;
+  max-width: 1000px;
+  height: 650px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* Left Panel: Form */
+.register-left {
+  flex: 1;
+  padding: 70px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-left h2 {
+  color: #3c096c;
+  font-weight: 700;
+  text-align: center;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  color: #3c096c;
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+}
+
+.form-control:focus {
+  border-color: #7f00ff;
+  box-shadow: 0 0 0 0.2rem rgba(127, 0, 255, 0.25);
+}
+
+/* Gradient Button */
+.btn-gradient {
+  background: linear-gradient(90deg, #7f00ff, #e100ff);
+  color: white;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-gradient:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(127, 0, 255, 0.4);
+}
+
+/* Right Panel */
+.register-right {
+  flex: 1;
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+  color: white;
+  padding: 80px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.register-right h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.register-right p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.register-right .btn {
+  background: white;
+  color: #7f00ff;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.register-right .btn:hover {
+  background: #ffe066;
+  color: #3c096c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-container {
+    flex-direction: column-reverse;
+    height: auto;
+    width: 90%;
+  }
+
+  .register-left, .register-right {
+    flex: none;
+    width: 100%;
+    padding: 40px 25px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .register-right h2 {
+    margin-top: 20px;
+  }
+}

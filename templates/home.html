@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpenZo | Smart Expense Tracker</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #e8f0fe, #ffffff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .container {
+        text-align: center;
+        background: #fff;
+        padding: 60px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        max-width: 450px;
+        width: 100%;
+      }
+
+      .logo {
+        font-size: 2.4rem;
+        font-weight: 800;
+        color: #0078ff;
+        letter-spacing: 1px;
+      }
+
+      .tagline {
+        color: #555;
+        font-size: 1.1rem;
+        margin: 10px 0 40px;
+      }
+
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        color: white;
+        background-color: #0078ff;
+        padding: 12px 30px;
+        border-radius: 30px;
+        margin: 10px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #005fcc;
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        color: #0078ff;
+        border: 2px solid #0078ff;
+      }
+
+      .btn-outline:hover {
+        background-color: #0078ff;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">💰 SpenZo</div>
+      <p class="tagline">
+        Take control of your finances with AI-powered insights. <br />
+        Simple, fast, and smart.
+      </p>
+      <div>
+        <a href="{{ url_for('login') }}" class="btn">Login</a>
+        <a href="{{ url_for('register') }}" class="btn btn-outline">Register</a>
+      </div>
+    </div>
+  </body>
+</html>

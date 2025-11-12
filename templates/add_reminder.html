@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4 text-info">📅 Add New Reminder</h2>
+  <div class="card shadow p-4">
+    <form action="{{ url_for('save_reminder') }}" method="POST">
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Title:</label>
+        <input type="text" name="title" class="form-control" placeholder="e.g., Car EMI" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Amount (₹):</label>
+        <input type="number" name="amount" class="form-control" placeholder="e.g., 15000" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Due Date:</label>
+        <input type="date" name="due_date" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Description:</label>
+        <textarea name="description" class="form-control" placeholder="Optional notes"></textarea>
+      </div>
+      <button type="submit" class="btn btn-info w-100 rounded-pill">Save Reminder</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-center mb-4">Category-wise Expenditure</h2>
+
+<div class="row justify-content-center g-4">
+  {% for cat, total in categories %}
+  <div class="col-md-4">
+    <div class="card text-center p-4 shadow-lg border-0 rounded-4 category-card">
+      <div class="card-body">
+        <i class="bi bi-wallet2 display-5 text-success mb-3"></i>
+        <h4 class="fw-bold">{{ cat }}</h4>
+        <p class="text-muted fs-5">₹{{ total or 0 }}</p>
+        <a href="{{ url_for('category_details', category=cat) }}" class="btn btn-outline-success rounded-pill">View Details</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="text-center mt-5">
+  <a href="/add_category_page" class="btn btn-primary rounded-pill">➕ Add New Category</a>
+</div>
+
+<style>
+  .category-card { background: linear-gradient(135deg, #eafaf1, #f4fef7); transition: all 0.3s; }
+  .category-card:hover { transform: scale(1.05); }
+</style>
+{% endblock %}
