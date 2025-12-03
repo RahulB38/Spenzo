@@ -2,9 +2,9 @@
 {% block content %}
 <h2 class="text-center mb-4">Category-wise Expenditure</h2>
 
-<div class="row justify-content-center g-4">
+<div class="row justify-content-center g-3 g-md-4">
   {% for cat, total in categories %}
-  <div class="col-md-4">
+  <div class="col-12 col-sm-6 col-md-4">
     <div class="card text-center p-4 shadow-lg border-0 rounded-4 category-card">
       <div class="card-body">
         <i class="bi bi-wallet2 display-5 text-success mb-3"></i>
@@ -17,8 +17,8 @@
   {% endfor %}
 </div>
 
-<div class="text-center mt-5">
-  <a href="/add_category_page" class="btn btn-primary rounded-pill">➕ Add New Category</a>
+<div class="text-center mt-4 mt-md-5">
+  <a href="/add_category_page" class="btn btn-primary rounded-pill w-100 w-md-auto">➕ Add New Category</a>
 </div>
 
 <style>

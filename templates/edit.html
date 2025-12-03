@@ -5,19 +5,19 @@
 <form method="POST" class="w-50 mx-auto">
   <div class="mb-3">
     <label>Item</label>
-    <input type="text" name="item" class="form-control" value="{{ record[2] }}">
+    <input type="text" name="item" class="form-control" value="{{ record[3] }}">
   </div>
   <div class="mb-3">
     <label>Category</label>
-    <input type="text" name="category" class="form-control" value="{{ record[3] }}">
+    <input type="text" name="category" class="form-control" value="{{ record[4] }}">
   </div>
   <div class="mb-3">
     <label>Amount</label>
-    <input type="number" name="amount" class="form-control" value="{{ record[4] }}">
+    <input type="number" name="amount" class="form-control" value="{{ record[5] }}">
   </div>
   <div class="mb-3">
     <label>Remark (optional)</label>
-    <textarea name="remark" class="form-control">{{ record[6] }}</textarea>
+    <textarea name="remark" class="form-control">{{ record[7] or '' }}</textarea>
   </div>
   <button class="btn btn-success">Update</button>
 </form>

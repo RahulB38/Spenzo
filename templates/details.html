@@ -14,9 +14,9 @@
   <tbody>
     {% for rec in records %}
     <tr>
-      <td>{{ rec[2] }}</td>
-      <td>₹{{ rec[4] }}</td>
-      <td>{{ rec[6] or "-" }}</td>
+      <td>{{ rec[3] }}</td>
+      <td>₹{{ "%.2f"|format(rec[5]) }}</td>
+      <td>{{ rec[7] or "-" }}</td>
       <td>
         <a href="{{ url_for('edit_record', id=rec[0]) }}" class="btn btn-warning btn-sm">Edit</a>
         <a href="{{ url_for('delete_record', id=rec[0], next=request.path) }}" class="btn btn-danger btn-sm">Delete</a>
